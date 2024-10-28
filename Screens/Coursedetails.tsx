@@ -5,7 +5,7 @@ const CourseDetail = ({ route }) => {
   const { course } = route.params;
 
   return (
-    <ScrollView style={styles.containerLight}>
+    <ScrollView style={styles.container}>
       <Text style={styles.header}>{course.name}</Text>
       <Text style={styles.courseInfo}>Duration: {course.duration}</Text>
       <Text style={styles.courseInfo}>Fees: R{course.fee}</Text>
@@ -18,21 +18,21 @@ const CourseDetail = ({ route }) => {
 };
 
 const styles = StyleSheet.create({
-  containerLight: {
+  container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f0f8ff',
+    backgroundColor: '#02386E',
   },
   header: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#fff', // Changed text color to white for better contrast
     textAlign: 'center',
   },
   courseInfo: {
     fontSize: 16,
-    color: '#666',
+    color: '#ccc', // Changed text color to light gray for better contrast
     marginBottom: 3,
   },
   sectionHeader: {
@@ -40,11 +40,11 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 15,
     marginBottom: 8,
-    color: '#4a90e2',
+    color: '#add8e6', // Changed text color to light blue for better contrast
   },
   courseContent: {
     fontSize: 16,
-    color: '#333',
+    color: '#fff', // Changed text color to white for better contrast
     lineHeight: 24,
   },
 });

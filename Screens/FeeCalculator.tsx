@@ -41,14 +41,17 @@ const FeeCalculator = () => {
             <Checkbox
               status={selectedCourses.includes(item.id) ? 'checked' : 'unchecked'}
               onPress={() => toggleCourse(item.id)}
-              color="#4a90e2"
+              color="#02386E"
             />
             <Text style={styles.checkboxLabel}>{item.name} (Fee: R{item.fee})</Text>
           </View>
         )}
         keyExtractor={item => item.id.toString()}
       />
-      <TouchableOpacity style={styles.button} onPress={() => alert(`Total Fees: R${calculateTotal()}`)}>
+      <TouchableOpacity 
+        style={styles.button} 
+        onPress={() => alert(`Total Fees: R${calculateTotal()}`)}
+      >
         <Text style={styles.buttonText}>Calculate Total Fees</Text>
       </TouchableOpacity>
     </View>
@@ -59,20 +62,20 @@ const styles = StyleSheet.create({
   containerLight: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f0f8ff',
+    backgroundColor: '#00264D', // Updated to dark blue background
   },
   header: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#fff', // Changed to white for better contrast on dark background
     textAlign: 'center',
   },
   checkboxContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 12,
-    backgroundColor: '#fff',
+    backgroundColor: 'rgba(255, 255, 255, 0.9)', // Semi-transparent white for contrast
     padding: 10,
     borderRadius: 8,
   },
@@ -82,11 +85,19 @@ const styles = StyleSheet.create({
     color: '#333',
   },
   button: {
-    backgroundColor: '#50c878',
+    backgroundColor: '#02386E', // Updated to specified button color
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 25,
     marginVertical: 10,
+    elevation: 3, // Add shadow on Android
+    shadowColor: '#000', // Add shadow on iOS
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
   },
   buttonText: {
     color: '#fff',

@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 const Home = ({ navigation }) => (
-  <LinearGradient colors={['#4a90e2', '#50c878']} style={styles.container}>
-    <Image source={require('../assets/favicon.png')} style={styles.logo} />
+  <LinearGradient colors={['#00264D', '#02386E']} style={styles.container}>
+    <Image source={require('../assets/Logo.jpeg')} style={styles.logo} />
     <Text style={styles.header}>Empowering the Nation</Text>
     <Text style={styles.description}>
       Empowering the Nation provides skills training for domestic workers and gardeners to enhance their marketability and enable them to earn higher wages.
@@ -26,15 +26,15 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   logo: {
-    width: 120,
-    height: 120,
+    width: 400,
+    height: 300,
     marginBottom: 20,
   },
   header: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#fff',
     textAlign: 'center',
   },
   description: {
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     color: '#fff',
   },
   button: {
-    backgroundColor: '#50c878',
+    backgroundColor: '#02386E',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 25,

@@ -2,19 +2,68 @@ import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 
 const courses = [
-  { id: 1, name: 'First Aid', fee: 1500, duration: '6 months', purpose: 'Learn essential first aid skills', content: 'Basic life support, wound care, emergency response' },
-  { id: 2, name: 'Sewing', fee: 1500, duration: '6 months', purpose: 'Develop sewing and tailoring skills', content: 'Basic stitches, garment construction, alterations' },
-  { id: 3, name: 'Landscaping', fee: 1500, duration: '6 months', purpose: 'Learn landscape design and maintenance', content: 'Plant selection, garden layout, irrigation systems' },
-  { id: 4, name: 'Life Skills', fee: 1500, duration: '6 months', purpose: 'Enhance personal and professional skills', content: 'Communication, time management, problem-solving' },
-  { id: 5, name: 'Child Minding', fee: 750, duration: '6 weeks', purpose: 'Learn childcare techniques', content: 'Child development, safety, educational activities' },
-  { id: 6, name: 'Cooking', fee: 750, duration: '6 weeks', purpose: 'Develop culinary skills', content: 'Meal planning, food safety, cooking techniques' },
-  { id: 7, name: 'Garden Maintenance', fee: 750, duration: '6 weeks', purpose: 'Learn garden care and maintenance', content: 'Plant care, pest control, lawn maintenance' },
+  {
+    id: 1,
+    name: 'First Aid',
+    fee: 1500,
+    duration: '6 months',
+    purpose: 'Learn essential first aid skills',
+    content: 'Basic life support, wound care, emergency response',
+  },
+  {
+    id: 2,
+    name: 'Sewing',
+    fee: 1500,
+    duration: '6 months',
+    purpose: 'Develop sewing and tailoring skills',
+    content: 'Basic stitches, garment construction, alterations',
+  },
+  {
+    id: 3,
+    name: 'Landscaping',
+    fee: 1500,
+    duration: '6 months',
+    purpose: 'Learn landscape design and maintenance',
+    content: 'Plant selection, garden layout, irrigation systems',
+  },
+  {
+    id: 4,
+    name: 'Life Skills',
+    fee: 1500,
+    duration: '6 months',
+    purpose: 'Enhance personal and professional skills',
+    content: 'Communication, time management, problem-solving',
+  },
+  {
+    id: 5,
+    name: 'Child Minding',
+    fee: 750,
+    duration: '6 weeks',
+    purpose: 'Learn childcare techniques',
+    content: 'Child development, safety, educational activities',
+  },
+  {
+    id: 6,
+    name: 'Cooking',
+    fee: 750,
+    duration: '6 weeks',
+    purpose: 'Develop culinary skills',
+    content: 'Meal planning, food safety, cooking techniques',
+  },
+  {
+    id: 7,
+    name: 'Garden Maintenance',
+    fee: 750,
+    duration: '6 weeks',
+    purpose: 'Learn garden care and maintenance',
+    content: 'Plant care, pest control, lawn maintenance',
+  },
 ];
 
 const CourseSummary = ({ navigation }) => {
   const renderCourseItem = ({ item }) => (
-    <TouchableOpacity
-      style={styles.courseItem}
+    <TouchableOpacity 
+      style={styles.courseItem} 
       onPress={() => navigation.navigate('CourseDetail', { course: item })}
     >
       <Text style={styles.courseName}>{item.name}</Text>
@@ -24,14 +73,17 @@ const CourseSummary = ({ navigation }) => {
   );
 
   return (
-    <View style={styles.containerLight}>
+    <View style={styles.container}>
       <FlatList
         data={courses}
         renderItem={renderCourseItem}
         keyExtractor={item => item.id.toString()}
         ListHeaderComponent={() => <Text style={styles.header}>Available Courses</Text>}
         ListFooterComponent={() => (
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FeeCalculator')}>
+          <TouchableOpacity 
+            style={styles.button} 
+            onPress={() => navigation.navigate('FeeCalculator')}
+          >
             <Text style={styles.buttonText}>Calculate Fees</Text>
           </TouchableOpacity>
         )}
@@ -41,20 +93,20 @@ const CourseSummary = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  containerLight: {
+  container: {
     flex: 1,
     padding: 20,
-    backgroundColor: '#f0f8ff',
+    backgroundColor: '#02386E',
   },
   header: {
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 15,
-    color: '#333',
+    color: '#fff',
     textAlign: 'center',
   },
   courseItem: {
-    backgroundColor: '#fff',
+    backgroundColor: '#f5f5f5', 
     padding: 15,
     marginBottom: 15,
     borderRadius: 10,
@@ -67,7 +119,7 @@ const styles = StyleSheet.create({
   courseName: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: '#4a90e2',
+    color: '#333',
     marginBottom: 5,
   },
   courseInfo: {
@@ -76,7 +128,7 @@ const styles = StyleSheet.create({
     marginBottom: 3,
   },
   button: {
-    backgroundColor: '#50c878',
+    backgroundColor: '#00264D',
     paddingVertical: 12,
     paddingHorizontal: 25,
     borderRadius: 25,
